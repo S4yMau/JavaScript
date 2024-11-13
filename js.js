@@ -1,95 +1,5 @@
-/*
-Variables
-string = "Cadena de texto"
-number = 10
-boolean = true/false
-undefined = variable declarada sin valor inicial
-null = variable declarada como vacia
-Nan = Not a Number (Cuando se intenta hacer una operacion aritmetica con una cadena de texto) 
-*/
+//Primer entrega
 
-/*
-var = Es la manera de iniciar una variable global
-let = Crea una variable solamente en el ambito creado
-const = una varaible que no puede ser modificada
- */
-
-/*
-let variable //Esta es una variable declarada sin inicializar (undefined)
-const tiene que ser declarado y inicializadosi no tirara error
-se pueden declarar muchas variables separadas por comas (,)
-*/
-
-/*
-El scope es el alcance de las variables 
-Y el hoisting dice que las variables tienen qeu ser creadas antes de ser llamadas (es indistinto para las funciones comunes)
-*/
-
-//prompt("Manera de pedir un dato al usuario, a modo de prueba")
-
-/*
-Operadores asignacion
-=
-+=
--=
-*=
-/=
-%=
-**=
-Operadores aritmeticos
-+
--
-/
-*
-++
---
-**
-%
-*/
-
-/*
-Concatenacion (+)
-Forzar numeros a strings ""
-usar ${variable} para escribir mejor los textos sin concatenar con el +. Esto se usa con los backticks `` (Ctrl + Alt + tecla cerrar llaves)
-Tener en cuenta el escape de comillas. Si se abre con comilla simples no se puede volver a usar las comillas simples hasta cerrar la frase
-*/
-
-/*
-Operadores de comparacion
-Estos operadores devuelven un valor boolean
-== es igua?
-!= es distinto?
-=== es estrictamente igual? estrictamente se refiere a que tambien sean el mismo tipo de dato
-!== es estrictamente distinto?
-> es mayor que?
->= es mayor o igual que?
-< es menor que?
-<= es menor o igual que?
-*/
-
-/*
-Operadores Logicos
-&& AND
-|| OR 
-! Lo contrario
-*/
-
-/*
-camelCase. Esta nomenclatura se usa en JS
-*/
-
-/*
-Condicionales
-if (se ejecuta si es true){
-    Bloque a ejecutar
-}
-else if (condicion opcional){
-    Bloque a ejecutar opcionar
-}
-else {
-    Bloque a ejecutar en caso de no cuplir con ninguna condicion
-}
-*/
 /*function pedirEmpanadas () {
     let plata = prompt(`Cuanta plata tenes para las empandas?`)
 
@@ -114,7 +24,7 @@ else {
 pedirEmpanadas()*/
 
 
-function restaurante () {
+/* function restaurante () {
     let personas = prompt(`Bienvenidos a el restaurant Boquense, mesa para cuantos?`)
     let hayPlatoValido = false
     for (let i = 0; i < personas; i++) {
@@ -140,4 +50,88 @@ function restaurante () {
         alert(`Pedido servido, provecho`)
     }
 }
-restaurante()
+restaurante() */
+
+//Segunda entrega
+let kevin = {id: 1,
+            nombre: `Kevin `,
+            precio: 10500,
+            importado: false
+}
+let chesterIce = {id: 2,
+    nombre: `Chester Ice`,
+    precio: 8000,
+    importado: false
+}
+let colbert = {id: 3,
+    nombre: `Colbert`,
+    precio: 9000,
+    importado: false
+}
+let tascani = {id: 4,
+    nombre: `Tascani singular`,
+    precio: 15000,
+    importado: false
+}
+let boss = {id: 5,
+    nombre: `Boss Intense`,
+    precio: 18000,
+    importado: false
+}
+let laMartina = {id: 6,
+    nombre: `La Martina`,
+    precio: 13000,
+    importado: false
+}
+let alliance = {id: 7,
+    nombre: `Alliance `,
+    precio: 12000,
+    importado: false
+}
+let oneMillion = {id: 8,
+    nombre: `One Million`,
+    precio: 11000,
+    importado: true
+}
+let halloween = {id: 9,
+    nombre: `Halloween`,
+    precio: 40000,
+    importado: true
+}
+const perfumes = [kevin , chesterIce , colbert , tascani , boss , laMartina , alliance , oneMillion , halloween]
+
+function buscarPerfume(idPerfume) {
+    return perfumes.find(perfume => perfume.id == idPerfume)
+}
+function filtroImportados() {
+    return perfumes.filter(perfume => perfume.importado == true)
+}
+function filtroPrecios(precioMaximo) {
+    return perfumes.filter(perfume => perfume.precio <= precioMaximo )
+}
+let menuPrincipal = prompt(` MENU PRINCIPAL \n 1: Buscar perfume \n 2: Ver perfumes importados \n 3: Elegir rango de precio`)
+
+if (menuPrincipal == 1) {
+    let elegirPerfume = prompt(`Que perfume estas buscando?\n Marque la opcion numerica: \n 1: Kevin \n 2: Chester Ice \n 3: Colbert \n 4: Tascani \n 5: Boss \n 6: La Martina \n 7: Alliance \n 8: One Million \n 9: Halloween`)
+    if (buscarPerfume(elegirPerfume) != undefined) {
+        console.log(buscarPerfume(elegirPerfume))
+    }
+    else {
+        alert(`Opcion ingresada incorrecta: Recargue la pagina`)
+    }
+    
+} 
+else if (menuPrincipal == 2) {
+    console.log(filtroImportados())
+}
+else if (menuPrincipal == 3) {
+    let elegirPrecio = prompt(`Ingresar precio maximo del perfume`)
+    console.log(filtroPrecios(elegirPrecio))
+}
+else{
+    alert(`Opcion ingresada incorrecta: Recargue la pagina `)
+}
+
+
+
+
